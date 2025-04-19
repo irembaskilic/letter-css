@@ -1,0 +1,255 @@
+body{
+    background: #573032;
+}
+.letter-image{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    transform: translate(-50%,-50%);
+    cursor: pointer;
+}
+.animated-mail{
+    position: absolute;
+    height: 150px;
+    width: 200px;
+    transition: 0.4s;
+}
+.animated-mail .body{
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 100px 200px;
+    border-color: transparent transparent #e95f55 transparent;
+    z-index: 2;
+}
+.animated-mail .top-fold{
+    position: absolute;
+    top: 50px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border: 50px 100px 0 100px;
+    transform-origin: 50% 0%;
+    transition: transform 0.4s 0.4s, z-index 0.2s 0.4s;
+    border-color: #cf4a43 transparent transparent transparent;
+    z-index: 2;
+}
+.animated-mail .back-fold{
+    position: absolute;
+    bottom: 0;
+    width: 200px;
+    height: 100px;
+    background: #cf4a43;
+    z-index: 0;
+}
+.animated-mail .left-fold{
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 50px 0 50px 100px;
+    border-color: transparent transparent transparent #e15349;
+    z-index: 2;
+}
+.animated-mail .letter{
+    left: 20px;
+    bottom: 0;
+    position: absolute;
+    width: 160px;
+    height: 50px;
+    background: white;
+    z-index: 1;
+    overflow: hidden;
+    transition: 0.4s 0.2s;
+}
+.animated-mail .letter .letter-border{
+    height: 10px;
+    width: 100%;
+    background: repeating-linear-gradient(-45deg, #cb5a5e, #cb5a5e 8px, transparent 8px, transparent 18px);
+}
+.animated-mail .letter .letter-title{
+    margin-top: 10px;
+    margin-left: 5px;
+    height: 10px;
+    width: 40%;
+    background: #cb5a5e;
+}
+.animated-mail .letter .letter-context{
+    margin-top: 10px;
+    margin-left: 5px;
+    height: 10px;
+    width: 20%;
+    background: #cb5a5e;
+}
+.animated-mail .letter .letter-stamp{
+    margin-top: 30px;
+    margin-left: 120px;
+    border-radius: 100%;
+    height: 30px;
+    width: 30px;
+    background: #cb5a5e;
+    opacity: 0.3;
+}
+.shadow{
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    width: 400px;
+    height: 30px;
+    transition: 0.4s;
+    transform: translateX(-50%);
+    border-radius: 100%;
+    background: radial-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0), rgba(0,0,0,0));
+}
+.letter-image:hover .animated-mail{
+    transform: translateY(50px);
+}
+.letter-image:hover .animated-mail .top-fold{
+    transition: transform 0.4s, z-index 0.2s;
+    transform: rotateX(180deg);
+    z-index: 0;
+}
+.letter-image:hover .animated-mail .letter{
+    height: 180px;
+}
+.letter-image:hover .shadow{
+    width: 250px;
+} 
+
+.video-header {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -150%);
+    font-size: 20px;
+    color: #fff;
+    font-family: Georgia, 'Times New Roman', Times, serif
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 8px 16px;
+    border-radius: 10px;
+    z-index: 10;
+}
+
+.corner-text {
+    position: absolute;
+    top: 65%;
+    left: 60%;
+    font-size: 16px;
+    color: #fff;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: rgba(255, 30, 101, 0.5);
+    padding: 6px 12px;
+    border-radius: 8px;
+    z-index: 10;
+    font-style: italic;
+    opacity: 0.8 background-color: #effe54;
+}
+.name-tag {
+    position: absolute;
+    top: 72%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-size: 20px;
+    font-family: 'Pacifico', cursive;
+    color: #ffe6f0;
+    background: rgba(255, 182, 193, 0.15);
+    padding: 10px 20px;
+    border: 2px none #ff9eb5;
+    border-radius: 25px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 12px rgba(255, 192, 203, 0.4);
+    z-index: 11;
+    cursor: pointer;
+}
+/* Kalp animasyonu */
+.hearts-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  
+  .heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ff6b81;
+    transform: rotate(-45deg);
+    animation: float 6s infinite ease-in;
+  }
+  
+  .heart::before,
+  .heart::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ff6b81;
+    border-radius: 50%;
+  }
+  
+  .heart::before {
+    top: -10px;
+    left: 0;
+  }
+  
+  .heart::after {
+    left: 10px;
+    top: 0;
+  }
+  /* Kalplerin animasyonu */
+  @keyframes float {
+    0% {
+      bottom: -10%;
+      left: 10%;
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      bottom: 110%;
+      left: 90%;
+      opacity: 0;
+    }
+  }
+  
+  /* Kalplerin farklı zamanlarda uçması için */
+  .heart:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+  }
+  
+  .heart:nth-child(2) {
+    left: 30%;
+    animation-delay: 1s;
+  }
+  
+  .heart:nth-child(3) {
+    left: 50%;
+    animation-delay: 2s;
+  }
+  
+  .heart:nth-child(4) {
+    left: 70%;
+    animation-delay: 3s;
+  }
+  
+  .heart:nth-child(5) {
+    left: 90%;
+    animation-delay: 4s;
+  }
+  .name-tag:hover{
+    animation-duration: 2s;
+    color: #f379c4;
+    transform: translate(-50%,-50%);
+  }
